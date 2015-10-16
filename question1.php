@@ -2,7 +2,7 @@
 <body>
 	<?php
 		class Converter {
-			public function converter1() {
+			public function JSonToArray() {
 				$jsondata = '[
 					{"name": "Usman Olayinka","matricno": "179291","dept": "computer science"
 					},
@@ -20,20 +20,22 @@
 			
 			$studentdata = json_decode($jsondata, true);
 			print_r(array($studentdata));
-			//var_dump($studentdata);
 		}
 
-		public function converter2() {
-			$arraydata = array('name' => "Usman Olayinka", "matricno" => "179291", "dept" => "computer science");
-			$arrayoutput = json_encode($arraydata, true)
-			var_dump($arrayoutput);
+		public function ArrayToJson() {
+			$arraydata = array(
+				"name" => "Usman Olayinka", 
+				"matricno" => 179291, 
+				"dept" => "computer science"
+			);
+			$arrayoutput = json_encode($arraydata)
+			echo $arrayoutput;
 		}
 	}
 
-
 	$stutern = new Converter;
-	$stutern->converter1();
-	$stutern->converter2();
+	$stutern->JSonToArray();
+	$stutern->ArrayToJson();
 ?>
 	</body>
 </html>
